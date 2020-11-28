@@ -3,7 +3,7 @@
  */
 .site-header {
   border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  //border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -16,7 +16,7 @@
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
+  float: right;
 
   &,
   &:visited {
@@ -25,6 +25,7 @@
 }
 
 .site-nav {
+  display: none;
   float: right;
   line-height: $base-line-height * $base-font-size * 2.25;
 
