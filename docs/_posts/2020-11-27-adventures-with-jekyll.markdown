@@ -9,7 +9,7 @@ Well, I think it was about an hour or two ago when I was like:
 
 > So you want a staticly hosted serverless website for free, huh?
 
-(Ken Burns, my dudes?)
+(Joe Burns, my dudes?)
 
 Anyway. Here we are. Look at us go. (Us = _The Royal We_ = me alone
 slouched over on my laptop.)
