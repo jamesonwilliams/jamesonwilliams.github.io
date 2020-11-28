@@ -1,11 +1,13 @@
 ---
-layout: page
+layout: home
 title: Hello
 ---
 
-This is a static landing page.
+My name is Jameson Williams.
 
-Will add a pic or somethin'.
+I am a Senior Software Engineer at AWS.
 
-There is a list of posts [here](/posts).
+I like to play the guitar and drive around the United States.
+
+This site is new, but I have a blog [here](/posts).
 
