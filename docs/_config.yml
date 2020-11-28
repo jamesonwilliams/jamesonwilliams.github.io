@@ -18,14 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Jameson Williams
+title: nosemaj.org
 email: jameson@nosemaj.org
+author: Jameson Williams
 description: >- # this means to ignore newlines until "baseurl:"
-  Jameson Williams is a Senior Software Engineer at Amazon Web Services.
+  Senior Software Engineer at Amazon Web Services.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: softwarejameson
 github_username:  jamesonwilliams
+linkedin_username: jamesonwilliams
 
 # Build settings
 theme: minima
