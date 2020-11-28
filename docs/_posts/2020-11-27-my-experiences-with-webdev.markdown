@@ -1,8 +1,11 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: post
+title:  "My Experiences With Web Development"
+date:   2020-11-27 20:00:00 -0600
+categories: webdev
 ---
+
+_This is primarily just filler content._
 
 I made my first static webpage in 1997 or so. Let me set the scene:
 Netscape Navigator, Alta Vista, Yahoo!, Geocities, cgi-bin, raw FTP, Ken
@@ -23,3 +26,4 @@ JavaScript became the tool of mode, and inumerable frameworks emerged.
 Fast forward to today: __I'm back, baby!__ Static hosting on GitHub
 pages. Markdown, HTML, CSS. No funny business. I love how things have
 come full circle.
+
