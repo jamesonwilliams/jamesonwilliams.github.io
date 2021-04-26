@@ -1,0 +1,144 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>Teggalog Translator 1.0</title>
+  
+    <link rel="canonical" href="/teggalog.html" />
+  
+    <meta charset="utf-8">
+    <meta name="author" content="Jameson Williams">
+    <meta name="description" content="Translates from English to Teggalog.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Even though we use metadata, don't want Google to display in listing. -->
+    <meta name="robots" content="noindex">
+  
+    <meta property="og:description" content="Translates from English to Teggalog." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="nosemaj.org" />
+    <meta property="og:title" content="Teggalog Translator 1.0" />
+    <meta property="og:url" content="https://nosemaj.org/teggalog.html" />
+    <meta property="og:image" content="https://nosemaj.org/hello.png" />
+  
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@softwarejameson" />
+    <meta name="twitter:creator" content="@softwarejameson" />
+    <meta name="twitter:title" content="Teggalog Translator 1.0" />
+    <meta name="twitter:description" content="Translates from English to Teggalog. Teggalog is a dialect of English spoken by my girlfriend." />
+    <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
+
+    <style type="text/css">
+        * {
+            font-family: sans-serif;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #container {
+            max-width: 100%;
+            margin: 100px auto;
+            text-align: center;
+        }
+        #input {
+            width: 80%;
+            padding: 15px;
+            border: 10px solid #eeeeee;
+            border-radius: 10px;
+            font-size: large;
+        }
+        #input:focus, #input:hover {
+            border: 10px solid tomato;
+            outline: none;
+        }
+        #title, #form {
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title">Teggalog Translator 1.0</h1>
+        <form id="form">
+            <input placeholder="Enter text here..." autocomplete="off" id="input">
+        </form>
+        <h2 id="output">
+    </div>
+</body>
+<script>
+    // A rule defines a pattern that will be replaced by a replacement text.
+    // Rules are evaluated in a chain. If this rule's pattern matches a
+    // bit of input, and if terminate is set to true, then no further
+    // rules will be processed.
+    class Rule {
+        constructor(pattern, replacement, terminate = false) {
+            this.pattern = pattern;
+            this.replacement = replacement;
+            this.terminate = terminate;
+        }
+    }
+
+    // Basic substitution rules for Teggalog dialect.
+    const mappingRules = [
+        // 'ck' mappings
+        new Rule('nick', 'nibb', true), // e.g., 'snickers' -> 'snibbers'
+        new Rule('nack', 'nabb', true), // e.g., 'snack' -> 'snab'
+        new Rule('ack', 'agg'), // e.g., 'crack' -> 'cragg'
+        new Rule('eck', 'egg'), // e.g., 'heck' -> 'hegg'
+        new Rule('ick', 'igg'), // e.g., 'chicken' -> 'chiggen'
+        new Rule('ock', 'ogg'), // e.g., 'clock' -> 'clogg'
+        new Rule('uck', 'ugg'), // e.g., 'truck' -> 'trugg'
+
+        // 'x' rules
+        new Rule('ax', 'aggs'), // e.g., 'taxes' -> 'taggses'
+        new Rule('ex', 'eggs'), // e.g., 'texas' -> 'teggsas'
+        new Rule('ix', 'iggs'), // e.g., 'pix' -> 'piggs'
+        new Rule('ox', 'oggs'), // e.g., 'foxy' -> 'foggsy'
+        new Rule('ux', 'uggs'), // e.g., 'Tux' -> 'Tuggs'
+
+        // 'lk' rules
+        new Rule('alk', 'alg'), // e.g., 'talk' -> 'talg'
+        new Rule('elk', 'elg'), // e.g., 'Elko' -> 'Elgo'
+        new Rule('ilk', 'ilg'), // e.g., 'milk' -> 'milg'
+        new Rule('olk', 'olg'), // e.g., 'folk' -> 'folg'
+        new Rule('ulk', 'ulg'), // e.g., 'sulking' -> 'sulging'
+
+        // global subs
+        new Rule('you', 'u'),
+        new Rule('?', ", baby boi?"),
+        new Rule('.', ", baby boi.")
+    ];
+
+    // Translates English into Teggalog.
+    function translateText(original) {
+        let translated = original.toLowerCase();
+        for (const rule of mappingRules) {
+            const next = translated.replaceAll(rule.pattern, rule.replacement);
+            if (next != translated && rule.terminate) {
+                translated = next;
+                break;
+            } else {
+                translated = next;
+            }
+        }
+        return translated;
+    }
+
+    const inputElement = document.getElementById('input');
+    // Update the output whenever the input changes
+    inputElement.addEventListener('input', function(event) {
+        const translatedText = translateText(event.target.value);
+        const outputElement = document.getElementById('output');
+        outputElement.innerHTML = translatedText;
+    });
+    // Disable the enter key.
+    inputElement.addEventListener('keypress', function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
+</script>
+</html>
+
