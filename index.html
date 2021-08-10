@@ -30,11 +30,41 @@
   <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
 
   <style type="text/css">
-    #container {
-      margin: 0 auto;
-      max-width: 500px;
-      margin-top: 15%;
-      font-family: Georgia, serif;
+    @media screen and (min-width: 550px) {
+      #container {
+        margin: 0 auto;
+        max-width: 500px;
+        margin-top: 15%;
+        font-family: Georgia, serif;
+      }
+      #left {
+        height: 200px;
+        width: 100px;
+        vertical-align: top;
+        display: table-cell;
+      }
+
+      #right {
+        height: 200px;
+        width: 380px;
+        padding-left: 20px;
+        vertical-align: top;
+        display: table-cell;
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      #container {
+        margin-top: 15%;
+        width: 100%;
+      }
+      #left {
+        margin: 20px;
+      }
+
+      #right {
+        margin: 20px;
+      }
     }
 
     #portrait {
@@ -42,21 +72,6 @@
       border-radius: 100%;
       width: 100px;
       height: 100px;
-    }
-
-    #left {
-      height: 200px;
-      width: 100px;
-      vertical-align: top;
-      display: table-cell;
-    }
-
-    #right {
-      height: 200px;
-      width: 380px;
-      padding-left: 20px;
-      vertical-align: top;
-      display: table-cell;
     }
 
     #hello {
@@ -78,6 +93,14 @@
 
     ol#links li:not(:first-child):before {
       content: " | ";
+    }
+
+    a {
+      color: #e07f3a;
+    }
+
+    a:hover, a:active {
+      color: #c24a27;
     }
   </style>
 </head>
