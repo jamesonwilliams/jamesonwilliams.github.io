@@ -1,0 +1,7 @@
+{
+  "icons": [
+    { "src": "https://nosemaj.org/icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "https://nosemaj.org/icons/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
+
