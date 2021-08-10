@@ -29,16 +29,40 @@
   <meta name="twitter:description" content="Staff Engineer at Reddit. Formerly AWS, Amazon Alexa, Intel. From Acton, attended Lehigh, Oxford. Lived in Portland, Seattle." />
   <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
 
-  <style>
+  <style type="text/css">
     #container {
-      font-family: Georgia, serif;
       margin: 0 auto;
-      max-width: 400px;
+      max-width: 500px;
       margin-top: 15%;
+      font-family: Georgia, serif;
+    }
+
+    #portrait {
+      margin-top: 10px;
+      border-radius: 100%;
+      width: 100px;
+      height: 100px;
+    }
+
+    #left {
+      height: 200px;
+      width: 100px;
+      vertical-align: top;
+      display: table-cell;
+    }
+
+    #right {
+      height: 200px;
+      width: 380px;
+      padding-left: 20px;
+      vertical-align: top;
+      display: table-cell;
     }
 
     #hello {
-      padding-bottom: 20px;
+      width: 300px;
+      padding: 0;
+      margin: 0;
       border-bottom: 3px solid black;
     }
 
@@ -46,10 +70,12 @@
       padding: 0;
       margin: 0;
     }
+
     ol#links li {
       display: inline;
       list-style-type: none;
     }
+
     ol#links li:not(:first-child):before {
       content: " | ";
     }
@@ -58,16 +84,20 @@
 
 <body>
   <div id="container">
-    <h1 id="hello">Hello</h1>
+    <div id="left">
+      <img id="portrait" src="jameson.jpg" alt="A portrait of Jameson Williams" />
+    </div>
 
-    <p id="blurb">My name is Jameson Williams. I am a software engineer. Please enjoy my various online content:</p>
-
-    <ol id="links">
-      <li><a href="https://linkedin.com/in/jamesonwilliams">LinkedIn</a></li>
-      <li><a href="https://github.com/jamesonwilliams">GitHub</a></li>
-      <li><a href="https://stackoverflow.com/users/695787/jameson?tab=profile">StackOverflow</a></li>
-      <li><a href="https://dev.to/jameson">dev.to</a></li>
-    </ol>
+    <div id="right">
+      <h1 id="hello">Hello, friend.</h1>
+      <p id="blurb">My name is Jameson Williams. I am a software engineer. Please enjoy my various online content.</p>
+      <ol id="links">
+        <li><a href="https://linkedin.com/in/jamesonwilliams">LinkedIn</a></li>
+        <li><a href="https://github.com/jamesonwilliams">GitHub</a></li>
+        <li><a href="https://stackoverflow.com/users/695787/jameson?tab=profile">StackOverflow</a></li>
+        <li><a href="https://dev.to/jameson">dev.to</a></li>
+      </ol>
+    </div>
   </div>
 </body>
 </html>
