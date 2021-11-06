@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>Tech Tier Acronym Maker 1.0</title>
+
+  <link rel="canonical" href="/tech-tier.html" />
+
+  <meta charset="utf-8">
+  <meta name="author" content="Jameson Williams">
+  <meta name="description" content="Generate a tech tier arconym from an input phrase. For example, you input FAANG and it prints Facebook Apple Amazon Netflix Google">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Even though we use metadata, don't want Google to display in listing. -->
+  <meta name="robots" content="noindex">
+  
+  <meta property="og:description" content="Generate a tech tier arconym from an input phrase. For example, you input FAANG and it prints Facebook Apple Amazon Netflix Google" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="nosemaj.org" />
+  <meta property="og:title" content="Tech Tier Acronym Maker 1.0" />
+  <meta property="og:url" content="https://nosemaj.org/tech-tier.html" />
+  <meta property="og:image" content="https://nosemaj.org/hello.png" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@softwarejameson" />
+  <meta name="twitter:creator" content="@softwarejameson" />
+  <meta name="twitter:title" content="Tech Tier Acronym Generator 1.0" />
+  <meta name="twitter:description" content="Generate a tech tier arconym from an input phrase. For example, you input FAANG and it prints Facebook Apple Amazon Netflix Google" />
+  <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
+
+  <script>
+    function toTitleCase(str) {
+      return str.replace(
+        /\w\S*/g,
+        function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+      );
+    }
+
+    function addCompany(companies, company) {
+      const key = company.charAt(0);
+      if (!companies[key]) {
+        companies[key] = Array()
+      }
+      companies[key].push(company);
+    }
+
+    function removeCompany(companies, inputKey) {
+      const key = inputKey.toLowerCase();
+      if (companies[key] && companies[key].length > 0) {
+        return companies[key].pop()
+      }
+      return undefined
+    }
+
+    function loadCompanies() {
+      const companies = [
+        "AirBnb",
+        "Alphabet",
+        "Amazon",
+        "Apple",
+        "ByteDance",
+        "Coinbase",
+        "Dropbox",
+        "Epic",
+        "Etsy",
+        "Facebook",
+        "Google",
+        "Hulu",
+        "Instacart",
+        "Intel",
+        "LinkedIn",
+        "Lyft",
+        "Meta",
+        "Microsoft",
+        "MongoDB",
+        "Netflix",
+        "Oracle",
+        "Pinterest",
+        "Reddit",
+        "Rivian",
+        "Snap",
+        "Square",
+        "Stripe",
+        "Tesla",
+        "Uber",
+        "Yahoo",
+        "Zynga"
+      ];
+      const map = new Map();
+      companies.forEach(company => {
+        addCompany(map, company.toLowerCase())
+      });
+      return map;
+    }
+
+    function addLi(toList, aValue) {
+      const aListItem = document.createElement("li");
+      aListItem.appendChild(document.createTextNode(aValue));
+      toList.appendChild(aListItem);
+    }
+
+    function init() {
+      const availableCompanies = loadCompanies()
+      const ul = document.getElementById("output");
+      input.addEventListener("keyup", function(e) {
+        const key = e.keyCode || e.charCode;
+        if (key == 8 || key == 46) {
+          const child = ul.lastChild
+          if (child.innerHTML) {
+            const companyKey = child.innerHTML.charAt(0).toLowerCase();
+            addCompany(availableCompanies, child.innerHTML)
+            ul.removeChild(ul.lastChild)
+          } else if (ul.lastchild) {
+            ul.removeChild(ul.lastChild)
+          }
+        } else if (key >= 65 && key <= 90) {
+          const next = removeCompany(availableCompanies, e.key)
+          if (next) {
+            addLi(ul, next)
+          }
+        } else if (key == 32) {
+          addLi(ul, ' ')
+        }
+      });
+    }
+
+    function shareOnTwitter() {
+      const techTierUrl = 'https://nosemaj.org/tech-tier.html';
+      var text = "I just generated a Tech Tier on Jameson's Tech Tier Acronym Generator 1.0!\n\n"; 
+      var ul = document.getElementById("output");
+      var items = ul.getElementsByTagName("li");
+
+      var acronym = ''
+      var companyNames = '';
+      for (var idx = 0; idx < items.length; idx++) {
+        const companyName = items[idx].innerHTML
+        companyNames += toTitleCase(companyName) + "\n";
+        acronym += companyName.charAt(0).toUpperCase()
+      }
+
+      text += acronym + ':\n\n';
+      text += companyNames + '\n';
+
+      const shareBase = 'http://twitter.com/share'
+      const andText = '?text=' + text
+      const andUrl = '&url=' + techTierUrl
+
+      window.open(encodeURI(shareBase + andText + andUrl), "_self")
+    }
+  </script>
+</head>
+
+<body onLoad="init()">
+  <h1>Tech Tier Acronym Maker 1.0</h1>
+
+  <p>Enter a word or phrase, and this page will spit out a Tech Tier
+  Acronym for it.</p>
+
+  <p>For example, you enter <code>FAANG</pre>, and this outputs <code>Facebook, Amazon, Apple, Netflix, Google</code>.</p>
+
+  <input id="input" type="text" placeholder="FAANG..." />
+  <ul id="output" />
+
+  <button onClick="shareOnTwitter()" type="button">Share to Twitter!</button>
+</body>
+</html>
+
