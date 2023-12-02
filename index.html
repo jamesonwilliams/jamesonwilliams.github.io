@@ -30,55 +30,39 @@
   <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
 
   <style type="text/css">
-    @media screen and (min-width: 550px) {
-      #container {
-        margin: 0 auto;
-        max-width: 500px;
-        margin-top: 15%;
-        font-family: Georgia, serif;
-      }
-      #left {
-        height: 200px;
-        width: 100px;
-        vertical-align: top;
-        display: table-cell;
-      }
-
-      #right {
-        height: 200px;
-        width: 380px;
-        padding-left: 20px;
-        vertical-align: top;
-        display: table-cell;
-      }
+    body {
+      font-family: Georgia, serif;
+      display: grid;
+      height: 100dvh;
+      margin: 0;
+      place-items: center;
     }
 
-    @media screen and (max-width: 550px) {
-      #container {
-        margin-top: 15%;
-        width: 100%;
-      }
-      #left {
-        margin: 20px;
-      }
+    #container {
+      padding: 5dvh 5dvw;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    #right {
+      max-width: 400px;
+    }
 
-      #right {
-        margin: 20px;
-      }
+    #left, #right {
+      margin: 1.5dvh 1.5dvw;
     }
 
     #portrait {
-      margin-top: 10px;
       border-radius: 100%;
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
     }
 
     #hello {
-      width: 300px;
       padding: 0;
       margin: 0;
-      border-bottom: 3px solid black;
+      text-decoration: underline;
     }
 
     ol#links {
