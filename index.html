@@ -31,11 +31,29 @@
 
     <style type="text/css">
       :root {
-        --color-dark-orange: #c24a27;
+        --color-charcoal: #0A0908;
+        --color-white: #E7ECEF;
         --color-light-orange: #e07f3a;
+        --color-dark-orange:  #c24a27;
+
+        --color-background: var(--color-white);
+        --color-text: var(--color-charcoal);
+        --color-link: var(--color-light-orange);
+        --color-link-highlight: var(--color-dark-orange);
+        --color-box-shadow: rgba(0, 0, 0, 0.3);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-background: var(--color-charcoal);
+          --color-text: var(--color-white);
+          --color-box-shadow: transparent;
+        }
       }
 
       body {
+        background-color: var(--color-background);
+        color: var(--color-text);
         font-family: Georgia, serif;
         display: grid;
         height: 100dvh;
@@ -69,15 +87,15 @@
         border-radius: 100%;
         max-height: 150px;
         max-width: 150px;
-        border: 6px solid var(--color-light-orange);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        border: 6px solid var(--color-link);
+        box-shadow: 5px 5px 10px var(--color-box-shadow);
       }
 
       header h1 {
         min-width: 100%;
         padding: 0;
         margin: 0;
-        border-bottom: 0.2rem solid black;
+        border-bottom: 0.2rem solid var(--color-text);
       }
 
       nav ul {
@@ -94,11 +112,11 @@
       }
 
       a {
-        color: var(--color-light-orange);
+        color: var(--color-link);
       }
 
       a:hover, a:active {
-        color: var(--color-dark-orange);
+        color: var(--color-link-highlight);
       }
     </style>
   </head>
