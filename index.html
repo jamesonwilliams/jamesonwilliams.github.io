@@ -1,127 +1,134 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <title>Jameson Williams - Software Engineer</title>
+  <head>
+    <title>Jameson Williams - Software Engineer</title>
 
-  <meta charset="utf-8">
-  <meta name="author" content="Jameson Williams">
-  <meta name="description" content="Software Engineer at Reddit, AWS, Amazon Alexa, Intel. From Acton-Boxborough, attended Lehigh, Oxford. Lived in Portland, Seattle.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="author" content="Jameson Williams">
+    <meta name="description" content="Software Engineer at Reddit, AWS, Amazon Alexa, Intel. From Acton-Boxborough, attended Lehigh, Oxford. Lived in Portland, Seattle.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="canonical" href="/" />
-  <link rel="icon" href="https://nosemaj.org/icons/favicon.ico" sizes="any">
-  <link rel="icon" href="https://nosemaj.org/icons/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://nosemaj.org/icons/apple-touch-icon.png">
-  <link rel="manifest" href="https://nosemaj.org/icons/manifest.webmanifest">
+    <link rel="canonical" href="/" />
+    <link rel="icon" href="https://nosemaj.org/icons/favicon.ico" sizes="any">
+    <link rel="icon" href="https://nosemaj.org/icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://nosemaj.org/icons/apple-touch-icon.png">
+    <link rel="manifest" href="https://nosemaj.org/icons/manifest.webmanifest">
 
-  <meta property="og:description" content="Software Engineer at Reddit, AWS, Amazon Alexa, Intel. From Acton-Boxborough, attended Lehigh, Oxford. Lived in Portland, Seattle." />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="nosemaj.org" />
-  <meta property="og:title" content="Jameson Williams - Software Engineer" />
-  <meta property="og:url" content="https://nosemaj.org" />
-  <meta property="og:image" content="https://nosemaj.org/hello.png" />
+    <meta property="og:description" content="Software Engineer at Reddit, AWS, Amazon Alexa, Intel. From Acton-Boxborough, attended Lehigh, Oxford. Lived in Portland, Seattle." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="nosemaj.org" />
+    <meta property="og:title" content="Jameson Williams - Software Engineer" />
+    <meta property="og:url" content="https://nosemaj.org" />
+    <meta property="og:image" content="https://nosemaj.org/hello.png" />
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@softwarejameson" />
-  <meta name="twitter:creator" content="@softwarejameson" />
-  <meta name="twitter:title" content="Jameson Williams - Software Engineer" />
-  <meta name="twitter:description" content="Software Engineer at Reddit, AWS, Amazon Alexa, Intel. From Acton-Boxborough, attended Lehigh, Oxford. Lived in Portland, Seattle." />
-  <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@softwarejameson" />
+    <meta name="twitter:creator" content="@softwarejameson" />
+    <meta name="twitter:title" content="Jameson Williams - Software Engineer" />
+    <meta name="twitter:description" content="Software Engineer at Reddit, AWS, Amazon Alexa, Intel. From Acton-Boxborough, attended Lehigh, Oxford. Lived in Portland, Seattle." />
+    <meta name="twitter:image" content="https://nosemaj.org/hello.png" />
 
-  <style type="text/css">
-    @media screen and (min-width: 550px) {
-      #container {
-        margin: 0 auto;
-        max-width: 500px;
-        margin-top: 15%;
+    <style type="text/css">
+      :root {
+        --color-dark-orange: #c24a27;
+        --color-light-orange: #e07f3a;
+      }
+
+      body {
         font-family: Georgia, serif;
-      }
-      #left {
-        height: 200px;
-        width: 100px;
-        vertical-align: top;
-        display: table-cell;
+        display: grid;
+        height: 100dvh;
+        margin: 0;
+        place-items: center;
       }
 
-      #right {
-        height: 200px;
-        width: 380px;
-        padding-left: 20px;
-        vertical-align: top;
-        display: table-cell;
-      }
-    }
-
-    @media screen and (max-width: 550px) {
       #container {
-        margin-top: 15%;
-        width: 100%;
+        padding: 7dvh 7dvw;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
       }
-      #left {
-        margin: 20px;
+
+      #container > div {
+        padding: 1.5dvh 1.5dvw;
       }
 
-      #right {
-        margin: 20px;
+      #content {
+        max-width: 22rem;
       }
-    }
 
-    #portrait {
-      margin-top: 10px;
-      border-radius: 100%;
-      width: 100px;
-      height: 100px;
-    }
+      @media screen and (max-width: 700px) {
+        #content {
+          max-width: auto;
+          min-width: fit-content;
+        }
+      }
 
-    #hello {
-      width: 300px;
-      padding: 0;
-      margin: 0;
-      border-bottom: 3px solid black;
-    }
+      #portrait img {
+        border-radius: 100%;
+        max-height: 150px;
+        max-width: 150px;
+        border: 6px solid var(--color-light-orange);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+      }
 
-    ol#links {
-      padding: 0;
-      margin: 0;
-    }
+      header h1 {
+        min-width: 100%;
+        padding: 0;
+        margin: 0;
+        border-bottom: 0.2rem solid black;
+      }
 
-    ol#links li {
-      display: inline;
-      list-style-type: none;
-    }
+      nav ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap
+      }
 
-    ol#links li:not(:first-child):before {
-      content: " | ";
-    }
+      nav li:not(:last-child):after {
+        content: "|";
+        margin: 0rem 0.2rem;
+      }
 
-    a {
-      color: #e07f3a;
-    }
+      a {
+        color: var(--color-light-orange);
+      }
 
-    a:hover, a:active {
-      color: #c24a27;
-    }
-  </style>
-</head>
+      a:hover, a:active {
+        color: var(--color-dark-orange);
+      }
+    </style>
+  </head>
 
-<body>
-  <div id="container">
-    <div id="left">
-      <img id="portrait" src="jameson.jpg" alt="A portrait of Jameson Williams" />
+  <body>
+    <div id="container">
+      <div id="portrait">
+        <img src="jameson.jpg" alt="A portrait of Jameson Williams" />
+      </div>
+
+      <div id="content">
+        <header>
+          <h1>Hello!</h1>
+        </header>
+
+        <main>
+          <p>My name is Jameson Williams. I am a software engineer. Here are some of my online artifacts:</p>
+        </main>
+
+        <footer>
+          <nav>
+            <ul>
+              <li><a href="https://linkedin.com/in/jamesonwilliams">LinkedIn</a></li>
+              <li><a href="https://github.com/jamesonwilliams">GitHub</a></li>
+              <li><a href="https://stackoverflow.com/users/695787/jameson?tab=profile">StackOverflow</a></li>
+              <li><a href="https://dev.to/jameson">dev.to</a></li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
     </div>
-
-    <div id="right">
-      <h1 id="hello">Hello, friend.</h1>
-      <p id="blurb">My name is Jameson Williams. I am a software engineer. Please enjoy my various online content.</p>
-      <ol id="links">
-        <li><a href="https://linkedin.com/in/jamesonwilliams">LinkedIn</a></li>
-        <li><a href="https://github.com/jamesonwilliams">GitHub</a></li>
-        <li><a href="https://stackoverflow.com/users/695787/jameson?tab=profile">StackOverflow</a></li>
-        <li><a href="https://dev.to/jameson">dev.to</a></li>
-      </ol>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
-
